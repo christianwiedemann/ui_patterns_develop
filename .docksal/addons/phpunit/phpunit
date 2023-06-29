@@ -21,7 +21,7 @@ DRUPAL_CORE_PATH="${DOCROOT_PATH}/core"
 PHPUNIT_XML_PATH="${PROJECT_ROOT}/.docksal/settings/phpunit.xml"
 
 run_tests() {
-    cd $DOCROOT_PATH
+    cd $PROJECT_ROOT
     ./vendor/bin/phpunit -c "${DRUPAL_CORE_PATH}" "$@"
     cd -
 }

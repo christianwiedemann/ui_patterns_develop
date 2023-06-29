@@ -1,0 +1,22 @@
+<phpunit bootstrap="docroot/core/tests/bootstrap.php" colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutChangesToGlobalState="true"
+         printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter">
+
+  <php>
+    <ini name="error_reporting" value="32767"/>
+    <ini name="memory_limit" value="-1"/>
+    <env name="SIMPLETEST_BASE_URL" value="http://drupal-8.localhost"/>
+    <env name="SIMPLETEST_DB" value="mysql://root:root@db/default"/>
+    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value="/var/www/docroot/sites/default/simpletest"/>
+  </php>
+  <testsuites>
+    <testsuite name="ui_patterns">
+      <directory>docroot/modules/contrib/ui_patterns/tests</directory>
+    </testsuite>
+    <testsuite name="ui_patterns_layouts">
+      <directory>docroot/modules/contrib/ui_patterns/modules/ui_patterns_layouts/tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

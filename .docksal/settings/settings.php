@@ -735,6 +735,7 @@ $settings['entity_update_batch_size'] = 50;
  */
 $settings['entity_update_backup'] = TRUE;
 
+$settings['extension_discovery_scan_tests'] = TRUE;
 /**
  * Node migration type.
  *

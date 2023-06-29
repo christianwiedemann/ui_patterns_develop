@@ -55,20 +55,11 @@ copy_settings_file()
 
 #-------------------------- Functions --------------------------------
 
-# Clones Drupal 9 repository into docroot.
-git_clone ()
-{
-	if [[ ! -d "$DOCROOT_PATH" ]]; then
-		echo-green "Cloning Drupal 9"
-		git clone "$DRUPAL_GIT_REPO" "$DOCROOT_PATH"
-	fi
-}
-
 # Runs composer install in docroot
 composer_install ()
 {
-	cd "$DOCROOT_PATH"
 	echo-green "Installing dependencies..."
+	sudo composer self-update
 	composer install
 }
 
@@ -100,7 +91,8 @@ site_install ()
 	# Credit: https://www.drupal.org/project/phpconfig/issues/1826652#comment-12071700
 	drush site-install standard -y \
 		install_configure_form.enable_update_status_module=NULL \
-		--site-name='My Drupal 9 Site'
+		--site-name='My Drupal 9 Site' --account-pass=admin
+  drush en sdc ui_patterns sdc_test layout_builder -y
   drush status
 }
 
@@ -109,7 +101,6 @@ site_install ()
 #-------------------------- Execution --------------------------------
 
 # Project initialization steps
-time -p git_clone
 time -p composer_install
 fix_permissions
 init_settings

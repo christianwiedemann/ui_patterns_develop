@@ -1,0 +1,113 @@
+{
+    "name": "drupal/ui_patterns_contrib",
+    "type": "project",
+    "description": "Development for UI Patterns.",
+    "license": "GPL-2.0-or-later",
+    "repositories": {
+
+        "ui_patterns": {
+            "type": "package",
+            "package": {
+                "name": "drupal/ui_patterns",
+                "version": "2.0.x-dev",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/christianwiedemann/ui_patterns.git",
+                    "type": "git",
+                    "reference": "2.0.x"
+                }
+            }
+        },
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+
+    },
+    "require": {
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.6.0",
+        "oomphinc/composer-installers-extender": "^2.0",
+        "drupal/ui_patterns": "2.0.x-dev",
+        "drupal/core": "10.1.x-dev",
+        "drupal/core-composer-scaffold": "^10.1.x-dev",
+        "drupal/core-project-message": "^10.1.x-dev",
+        "drupal/core-recommended": "^10.1.x-dev",
+        "drupal/token": "^1.11"
+    },
+    "require-dev": {
+        "drush/drush": ">=12",
+        "phpunit/phpunit": "*",
+        "drupal/core-dev": "^10.1"
+    },
+    "config": {
+        "process-timeout": 0,
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "acquia/blt": true,
+            "acquia/blt-phpcs": true,
+            "drupal/core-project-message": true,
+            "oomphinc/composer-installers-extender": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "patches": {},
+        "composer-exit-on-patch-failure": true,
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "docroot/"
+            }
+        },
+        "enable-patching": true,
+        "installer-paths": {
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ]
+        },
+        "installer-types": [
+            "drupal-profile",
+            "drupal-module",
+            "drupal-core",
+            "drupal-library",
+            "bower-asset",
+            "npm-asset"
+        ],
+        "patchLevel": {
+            "drupal/core": "-p2"
+        }
+    }
+
+}
