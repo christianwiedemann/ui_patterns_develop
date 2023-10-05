@@ -32,12 +32,11 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6.0",
         "oomphinc/composer-installers-extender": "^2.0",
-        "drupal/ui_patterns": "2.0.x-dev",
         "drupal/core": "10.1.x-dev",
         "drupal/core-composer-scaffold": "^10.1.x-dev",
         "drupal/core-project-message": "^10.1.x-dev",
         "drupal/core-recommended": "^10.1.x-dev",
-        "drupal/token": "^1.11"
+        "drupal/token": "^1.12"
     },
     "require-dev": {
         "drush/drush": ">=12",
@@ -61,7 +60,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
-        "patches": {},
+        "patches": {
+            "drupal/core": {
+                "Remove final from Sdc Plugin Manager": "./patches/sdc/sdc.plugin.manager.patch"
+            }
+        },
         "composer-exit-on-patch-failure": true,
         "drupal-scaffold": {
             "locations": {
