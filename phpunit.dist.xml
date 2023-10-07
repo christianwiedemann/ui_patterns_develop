@@ -13,10 +13,7 @@
   </php>
   <testsuites>
     <testsuite name="ui_patterns">
-      <directory>docroot/modules/contrib/ui_patterns/tests</directory>
-    </testsuite>
-    <testsuite name="ui_patterns_layouts">
-      <directory>docroot/modules/contrib/ui_patterns/modules/ui_patterns_layouts/tests</directory>
+      <directory>docroot/modules/custom/ui_patterns/tests</directory>
     </testsuite>
   </testsuites>
 </phpunit>

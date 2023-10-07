@@ -5,6 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/docroot/modules/contrib/ui_patterns/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/docroot/modules/contrib/ui_patterns/modules/ui_patterns_layouts/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/docroot/core" isTestSource="false" packagePrefix="Drupal" />
+      <sourceFolder url="file://$MODULE_DIR$/docroot/core/lib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/docroot/core/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-browserkit-driver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-selenium2-driver" />
