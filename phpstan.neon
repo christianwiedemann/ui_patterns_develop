@@ -1,0 +1,12 @@
+parameters:
+    level: 7
+    paths:
+        - web/modules/custom
+    excludePaths:
+        analyseAndScan:
+            - */node_modules/*
+            - */vendor/*
+    inferPrivatePropertyTypeFromConstructor: true
+    ignoreErrors:
+      -
+        identifier: missingType.iterableValue

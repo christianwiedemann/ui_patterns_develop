@@ -50,8 +50,14 @@
     <env name="MINK_DRIVER_ARGS_WEBDRIVER" value=''/>
   </php>
   <testsuites>
-    <testsuite name="uipatterns">
+    <testsuite name="ui_patterns">
       <directory>/var/www/html/web/modules/custom/ui_patterns/*</directory>
+    </testsuite>
+    <testsuite name="ui_patterns_field_formatters">
+      <directory>/var/www/html/web/modules/custom/ui_patterns/modules/ui_patterns_field_formatters/*</directory>
+    </testsuite>
+    <testsuite name="ui_patterns_core">
+      <directory>/var/www/html/web/modules/custom/ui_patterns/tests/*</directory>
     </testsuite>
   </testsuites>
   <listeners>
