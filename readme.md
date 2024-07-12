@@ -1,4 +1,6 @@
-# UI Patterns development projects for UI Patterns 2.
+# UI Patterns development
+
+DDEV Development project for UI Patterns 2 including linting and test commands.
 
 
 # Initialisation:
