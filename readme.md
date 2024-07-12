@@ -13,7 +13,7 @@ To run all phpunit test run
 
     ddev phpunit
 
-To run tests for submodules run
+To run tests for submodules
 
       ddev phpunit --testsuite ui_patterns_core
       ddev phpunit --testsuite ui_patterns_field_formatters
