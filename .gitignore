@@ -1,5 +1,5 @@
 .idea
-web
-vendor
+/web
+/vendor
 .phpcs-cache
 phpcs.xml
