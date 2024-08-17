@@ -6,4 +6,5 @@
 
 # Abort if anything fails
 set -e
-phpstan $*
+
+phpstan analyse --no-interaction  --memory-limit=-1  -- web/modules/custom/ui_patterns/

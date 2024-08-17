@@ -1,6 +1,6 @@
 {
-    "name": "drupal/recommended-project",
-    "description": "Project template for Drupal projects with a relocated document root",
+    "name": "drupal/ui_patterns_develop",
+    "description": "UI Patterns development template",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -18,11 +18,11 @@
         "composer/installers": "^2.0",
         "drupal-composer/info-rewrite": "~1.0",
         "drupal/coder": "^8.3",
-        "drupal/core-composer-scaffold": "^10.3@beta",
-        "drupal/core-project-message": "^10.3@beta",
-        "drupal/core-dev": "^10.3@beta",
-        "drupal/core-recommended": "^10.3@beta",
-        "drush/drush": "^12.5",
+        "drupal/core-composer-scaffold": "^11.0",
+        "drupal/core-dev": "^11.0",
+        "drupal/core-project-message": "^11.0",
+        "drupal/token": "^1.14",
+        "drush/drush": "^13.0",
         "justinrainbow/json-schema": "^5.2"
     },
     "conflict": {
