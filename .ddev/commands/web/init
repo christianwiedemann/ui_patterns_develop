@@ -16,8 +16,10 @@ mkdir -p $CUSTOM_FOLDER
 if [ ! -d "$CUSTOM_FOLDER/ui_patterns" ]; then
   cd $CUSTOM_FOLDER
   git clone https://git.drupalcode.org/project/ui_patterns.git
+  cd ui_patterns
+  git checkout 2.0.x
 fi
 
 drush si -y
-drush en ui_patterns ui_patterns_field_formatters ui_patterns_layouts ui_patterns_views -y
+drush en ui_patterns ui_patterns_blocks ui_patterns_field_formatters ui_patterns_layouts ui_patterns_views -y
 drush cr
