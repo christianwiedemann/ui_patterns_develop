@@ -10,6 +10,7 @@ set -e
 echo "composer install"
 composer install
 
+ROOT="/var/www/html"
 CUSTOM_FOLDER="web/modules/custom"
 
 mkdir -p $CUSTOM_FOLDER
@@ -19,7 +20,7 @@ if [ ! -d "$CUSTOM_FOLDER/ui_patterns" ]; then
   cd ui_patterns
   git checkout 2.0.x
 fi
-
+cd $ROOT
 drush si -y
 drush en ui_patterns ui_patterns_blocks ui_patterns_field_formatters ui_patterns_layouts ui_patterns_views -y
 drush cr

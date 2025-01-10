@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## Description: Run twig-cs
+## Usage: twigcs
+## Example: "ddev twigcs"
+
+# Abort if anything fails
+set -e
+
+twig-cs-fixer lint --config=web/modules/custom/ui_patterns/.twig-cs-fixer.php web/modules/custom/ui_patterns

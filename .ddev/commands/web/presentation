@@ -1,0 +1,18 @@
+#!/bin/bash
+
+## Description: Clone and install UI Patterns
+## Usage: presentation
+## Example: "ddev presentation"
+
+# Abort if anything fails
+set -e
+
+echo "composer install"
+composer install
+
+ROOT="/var/www/html"
+
+cd $ROOT
+drush si -y --account-pass=admin
+drush en layout_builder ui_styles_block -y
+drush cr

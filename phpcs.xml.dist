@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- Adapted from Acquia Coding Standards default ruleset. -->
-<!-- @see https://github.com/acquia/coding-standards-php/blob/develop/example/phpcs.xml.dist -->
 
-<!-- https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset -->
+<?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="ui_patterns">
-
-  <description>UI Patterns PHP CodeSniffer configuration.</description>
-
-  <!-- Set extensions to scan (taken from Coder 8.3.6). -->
-  <!-- @see https://git.drupalcode.org/project/coder/blob/8.3.6/coder_sniffer/Drupal/ruleset.xml#L8 -->
+  <description>PHP CodeSniffer configuration for example development.</description>
+  <!-- Check all files in the current directory and below. -->
+  <file>.</file>
   <arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt,md,yml"/>
+  <!-- Change this value to 7 if you want to check Drupal 7 code. -->
+  <config name="drupal_core_version" value="8"/>
 
-  <arg name="colors"/>
-  <arg name="cache" value=".phpcs-cache"/>
-  <arg name="parallel" value="10"/>
-  <file>web/modules/custom/ui_patterns</file>
-  <exclude-pattern>*.css</exclude-pattern>
-  <exclude-pattern>*.md</exclude-pattern>
+  <!-- If you have Coder installed locally then you can reference the Drupal
+  standards with relative paths. Otherwise simply use "Drupal" and
+  "DrupalPractice. -->
+  <rule ref="../vendor/drupal/coder/coder_sniffer/Drupal">
+    <!-- Example how you would disable a rule you are not compliant with yet:
+    <exclude name="Drupal.Commenting.Deprecated"/>
+    -->
+  </rule>
+  <rule ref="../vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
-  <rule ref="DrupalPractice"/>
-  <rule ref="Drupal"/>
-
+  <!-- Example how you would disable an external rule you do not like:
+  <rule ref="PEAR.Functions.ValidDefaultValue.NotAtEnd">
+    <severity>0</severity>
+  </rule>
+  -->
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
+    <properties>
+      <property name="caseSensitive" value="true"/>
+    </properties>
+  </rule>
 </ruleset>
