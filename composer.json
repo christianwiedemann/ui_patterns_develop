@@ -113,6 +113,7 @@
     },
     "require-dev": {
         "palantirnet/drupal-rector": "^0.20.3",
+        "phpmd/phpmd": "^2.15",
         "vincentlanglet/twig-cs-fixer": "^3.4"
     }
 }

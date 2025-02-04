@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Run phpmd
+## Usage: phpmd
+## Example: "ddev phpmd"
+
+# Abort if anything fails
+set -e
+phpmd /var/www/html/web/modules/custom/ui_patterns text /var/www/html/web/modules/custom/ui_patterns/.phpmd.xml --exclude 'tests/*,**/tests/*'
